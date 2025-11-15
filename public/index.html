@@ -4,43 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Alumnos</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div>
+    <div class="container">
     <h1>Gestión de Alumnos</h1>
     <div id="formulario">
-        <div>
+        <div class="form-group">
             <label for="id">ID (solo para actualizar o borrar)</label>
             <input type="number" id="id" name="id" placeholder="ej. 3">
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" required placeholder="Nombre del alumno">
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="edad">Edad</label>
             <input type="number" id="edad" name="edad" required min="1" placeholder="Edad">
         </div>
 
-        <div>
+        <div class="form-group">
             <label for="curso">Curso</label>
             <input type="text" id="curso" name="curso" placeholder="Curso o grado">
         </div>
 
-        <div>
-            <button type="button" onclick="enviarFormulario('insertar')">Insertar</button>
-            <button type="button" onclick="enviarFormulario('actualizar')">Actualizar</button>
-            <button type="button" onclick="enviarFormulario('borrar')">Borrar</button>
+        <div class="buttons full">
+            <button class="insert" type="button" onclick="enviarFormulario('insertar')">Insertar</button>
+            <button class="update" type="button" onclick="enviarFormulario('actualizar')">Actualizar</button>
+            <button class="delete" type="button" onclick="enviarFormulario('borrar')">Borrar</button>
         </div>
     </div>
 
     <h2>Consulta de Alumnos</h2>
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">
-        <button type="button" onclick="verAlumnos()">Ver Alumnos</button>
-        <small>Pulsa para refrescar la lista</small>
+        <button class="ghost" type="button" onclick="verAlumnos()">Ver Alumnos</button>
+        <small class="meta">Pulsa para refrescar la lista</small>
     </div>
      <div id="lista"></div>
      </div>

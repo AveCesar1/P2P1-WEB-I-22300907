@@ -1,0 +1,74 @@
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --primary-600: #4338ca;
+  --muted: #6b7280;
+  --border: #e6e9ef;
+  --success: #10b981;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  padding:28px;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width:900px;
+  margin:20px auto;
+  background:var(--card);
+  padding:24px;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(15,23,42,0.06);
+}
+
+h1{margin:0 0 14px;font-size:1.5rem;color:var(--primary-600)}
+
+
+#formulario{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;align-items:start;margin-bottom:18px}
+
+.form-group{display:flex;flex-direction:column}
+
+#formulario .form-group input{font-size:0.95rem}
+
+#formulario .full{grid-column:1 / -1}
+
+
+.buttons{grid-column:1 / -1;display:flex;gap:10px}
+
+.buttons.full{grid-column:1 / -1}
+
+.buttons button{flex:1;padding:10px 12px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+
+.buttons button.insert{background:var(--primary);color:#fff}
+
+.buttons button.update{background:#374151;color:#fff}
+
+.buttons button.delete{background:#ef4444;color:#fff}
+
+.buttons button.ghost{background:transparent;border:1px solid var(--border);color:var(--primary)}
+
+
+h2{margin:8px 0 10px;font-size:1.1rem}
+
+#lista{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(79,70,229,0.03), transparent)}
+
+#lista ul{list-style:none;margin:0;padding:0}
+
+#lista li{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:var(--card);border:1px solid #f1f3f5;margin-bottom:10px}
+
+#lista .meta{color:var(--muted);font-size:0.9rem}
+
+
+@media (max-width:720px){
+  #formulario{grid-template-columns:1fr}
+  .buttons{flex-direction:column}
+}
+
+footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
