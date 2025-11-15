@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumnos</title>
+    <link rel="stylesheet" href="alumnos.css">
+    <script>
+        function enviarFormulario(accion) {
+            document.getElementById('accion').value = accion;
+            document.getElementById('formulario').submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestión de Alumnos</h1>
+        </header>
+        
+        <main>
+            <section class="form-section">
+                <h2>Operaciones con Alumnos</h2>
+                <form id="formulario" action="alumnos.php" method="POST">
+                    <input type="hidden" id="accion" name="accion">
+                    
+                    <div class="form-group">
+                        <label for="id">ID (solo para actualizar o borrar):</label>
+                        <input type="number" id="id" name="id">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="curso">Curso:</label>
+                        <input type="text" id="curso" name="curso">
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" class="btn btn-insertar" onclick="enviarFormulario('insertar')">Insertar</button>
+                        <button type="button" class="btn btn-actualizar" onclick="enviarFormulario('actualizar')">Actualizar</button>
+                        <button type="button" class="btn btn-borrar" onclick="enviarFormulario('borrar')">Borrar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="consulta-section">
+                <h2>Consulta de Alumnos</h2>
+                <form action="alumnos.php" method="GET">
+                    <button type="submit" class="btn btn-consultar">Ver Alumnos</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
